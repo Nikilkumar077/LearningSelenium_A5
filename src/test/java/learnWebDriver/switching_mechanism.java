@@ -1,0 +1,32 @@
+package learnWebDriver;
+
+import java.net.MalformedURLException;
+import java.net.URL;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WindowType;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class switching_mechanism {
+
+	public static void main(String[] args) throws MalformedURLException {
+		// TODO Auto-generated method stub
+		
+		WebDriver driver=new ChromeDriver();
+		
+		driver.manage().window().maximize();
+		driver.navigate().to("https://online.kfc.co.in");
+		
+		driver.navigate().to(new URL("https://www.naukri.com/"));
+		driver.switchTo().newWindow(WindowType.WINDOW);
+		//driver.navigate().to(new URL("https://www.naukri.com/"));
+		
+		
+		//syntax
+		//driver.switchTo().newWindow(WindowType.WINDOW);
+		//driver.switchTo().newWindow(WindowType.TAB);
+		
+
+	}
+
+}

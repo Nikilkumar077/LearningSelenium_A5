@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.interactions.WheelInput.ScrollOrigin;
 
 public class HandleHiddenElement {
 
@@ -35,6 +36,47 @@ public class HandleHiddenElement {
 		//actionobj.doubleClick(driver.findElement(By.xpath("//ul[@class='top-menu']//a[contains(text(),'Note')]"))).perform();
 		
 		actionobj.contextClick(driver.findElement(By.xpath("//ul[@class='top-menu']//a[contains(text(),'Acc')]"))).perform();
+		System.out.println("Execution done");
+		
+		
+		driver.get("https://vinothqaacademy.com/mouse-event/");
+		
+		WebElement dragel = driver.findElement(By.id("dragItem"));
+		
+		WebElement dropel = driver.findElement(By.id("dropZone"));
+		
+		
+		
+		
+		
+		//perform operations
+		
+		actionobj.dragAndDrop(dragel, dropel).perform();
+		
+		//actionobj.dragAndDrop(driver.findElement(By.id("dragItem")), driver.findElement(By.id("dropZone")));
+		
+		actionobj.clickAndHold(dragel).release(dropel).perform();
+		
+		//actionobj.clickAndHold(driver.findElement(By.id("dragItem"))).release(driver.findElement(By.id("dropZone"))).perform();
+		
+		
+		//hover operation
+		
+		WebElement hover = driver.findElement(By.id("tooltipTarget"));
+		actionobj.moveToElement(hover).perform();
+		
+		//slider
+		actionobj.dragAndDropBy(driver.findElement(By.id("handle_max")), 400, 0).perform();
+		
+		//scrolling
+		
+		actionobj.scrollByAmount(0, 500).perform();
+		
+		actionobj.scrollToElement(hover).perform();
+		
+		actionobj.scrollFromOrigin(ScrollOrigin.fromElement(hover), 0, 500).perform();
+		
+		
 		System.out.println("Execution done");
 		
 		driver.close();

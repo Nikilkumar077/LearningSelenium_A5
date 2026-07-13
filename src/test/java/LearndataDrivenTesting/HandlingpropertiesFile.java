@@ -39,7 +39,6 @@ public class HandlingpropertiesFile {
 		prop_obj.store(fos, "browser added ... !");
 		
 		
-		
 		// open the browser
 		
 		WebDriver driver=new ChromeDriver();
@@ -58,11 +57,7 @@ public class HandlingpropertiesFile {
 		String passdata = prop_obj.getProperty("password");
 		driver.findElement(By.id("password")).sendKeys(passdata);
 		
-		driver.findElement(By.id("login-button")).click();
-		
-		
-		
-		
+		driver.findElement(By.id("login-button")).click();		
 		
 	}
 

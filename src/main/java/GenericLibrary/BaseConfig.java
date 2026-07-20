@@ -12,6 +12,7 @@ import org.testng.annotations.BeforeMethod;
 
 public class BaseConfig {
 	public WebDriver driver;
+	public static WebDriver stdriver;
 	
 	@BeforeClass
 	public void BrowserSetup() {
